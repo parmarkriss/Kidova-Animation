@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Kidova Pro - Smart Nutrition for Growing Champions</title>
+  <meta name="description"
+    content="Explore Kidova Pro Nutrition Powder Belgian Chocolate flavor. High-protein, nutrient-rich formula designed to power growing children.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./index.css">
+
+  <!-- Tailwind CSS & Fonts from code.html -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f97316", // energetic orange
+            "background-light": "#ffffff",
+            "background-dark": "#1f2937",
+            secondary: "#4b5563",
+            accent: "#8b5cf6",
+          },
+          fontFamily: {
+            display: ["Nunito", "sans-serif"],
+            body: ["Poppins", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            'lg': "1rem",
+            'xl': "1.5rem",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader-overlay">
+    <div class="preloader-content">
+      <div class="loader-visual">
+        <div class="liquid-cup">
+          <div class="chocolate-fill"></div>
+        </div>
+      </div>
+      <h1 class="loader-title">Kidova Pro</h1>
+      <p class="loader-subtitle">Preparing Belgian Chocolate Mix...</p>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="load-progress"></div>
+      </div>
+      <div class="progress-text" id="load-percentage">0%</div>
+    </div>
+  </div>
+
+
+  <!-- Side Navigation Indicator -->
+  <div class="scroll-indicator-dots">
+    <div class="dot active" data-target="hero"></div>
+    <div class="dot" data-target="flavor"></div>
+    <div class="dot" data-target="nutrition"></div>
+  </div>
+
+  <!-- Canvas Container (Fixed in Background) -->
+  <div class="canvas-container">
+    <canvas id="animation-canvas"></canvas>
+  </div>
+
+  <!-- Main Scroll Container -->
+  <main class="scroll-container">
+    <section class="scroll-section hero-section">
+    </section>
+  </main>
+
+  <!-- Tailwind-styled sections from code.html -->
+  <div class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 antialiased relative z-20">
+
+    <section class="py-32 relative overflow-hidden" id="benefits">
+
+      <!-- Background Glow -->
+      <div class="absolute inset-0">
+        <div class="absolute top-20 left-20 w-96 h-96 bg-orange-500/20 blur-[150px] rounded-full"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-yellow-500/20 blur-[150px] rounded-full"></div>
+      </div>
+
+      <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+
+        <div class="text-center max-w-4xl mx-auto mb-20">
+
+          <span
+            class="px-5 py-2 rounded-full border border-orange-400/30 bg-orange-400/10 text-orange-300 text-sm font-semibold tracking-widest uppercase">
+            Why Kidova Pro
+          </span>
+
+          <h2 class="mt-8 text-5xl md:text-7xl font-black leading-tight text-slate-900">
+            Nutrition For
+            <span class="bg-gradient-to-r from-yellow-300 via-orange-400 to-orange-500 bg-clip-text text-transparent">
+              Future Champions
+            </span>
+          </h2>
+
+          <p class="mt-6 text-xl text-gray-400">
+            Premium nutrition crafted with science-backed ingredients to support
+            growth, immunity, and everyday performance.
+          </p>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Card -->
+          <div class="group relative">
+
+            <div class="
+    bg-white
+    rounded-[32px]
+    p-10
+    border
+    border-orange-100
+    shadow-[0_10px_50px_rgba(0,0,0,.08)]
+    hover:shadow-[0_25px_80px_rgba(255,140,0,.15)]
+    transition-all
+    duration-500
+    hover:-translate-y-3
+    ">
+
+              <div class="
+      w-20 h-20
+      rounded-3xl
+      bg-gradient-to-br
+      from-orange-400
+      to-orange-600
+      flex
+      items-center
+      justify-center
+      text-4xl
+      mb-8
+      ">
+                💪
+              </div>
+
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                5g Protein Per Scoop
+              </h3>
+
+              <p class="text-slate-600 leading-8">
+                Supports muscle growth, strength development and active lifestyles.
+              </p>
+
+            </div>
+
+          </div>
+          <!-- Card -->
+          <div class=" bg-white
+    rounded-[32px]
+    p-10
+    border
+    border-orange-100
+    shadow-[0_10px_50px_rgba(0,0,0,.08)]
+    hover:shadow-[0_25px_80px_rgba(255,140,0,.15)]
+    transition-all
+    duration-500
+    hover:-translate-y-3">
+
+            <div
+              class="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-300 to-green-500 flex items-center justify-center text-4xl shadow-lg">
+              🛡️
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-900 mt-8">
+              Immunity Boost
+            </h3>
+
+            <p class="text-slate-600 leading-8 mt-4 leading-relaxed">
+              Fortified with essential vitamins and minerals for stronger immunity.
+            </p>
+
+          </div>
+
+          <!-- Card -->
+          <div class="bg-white
+    rounded-[32px]
+    p-10
+    border
+    border-orange-100
+    shadow-[0_10px_50px_rgba(0,0,0,.08)]
+    hover:shadow-[0_25px_80px_rgba(255,140,0,.15)]
+    transition-all
+    duration-500
+    hover:-translate-y-3">
+
+            <div
+              class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-300 to-purple-500 flex items-center justify-center text-4xl shadow-lg">
+              🧠
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-900 mt-8">
+              Smart Nutrition
+            </h3>
+
+            <p class="text-slate-600 leading-8 mt-4 leading-relaxed">
+              Complete balanced nutrition designed specifically for growing kids.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Ingredients Section -->
+    <section class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-20 flex flex-col md:flex-row-reverse items-center gap-16">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Delicious Taste,
+          Clean Ingredients</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          We believe nutrition shouldn't be a compromise. Kidova Pro combines the irresistible taste of Belgian
+          chocolate with ingredients you can feel good about.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Rich Belgian Chocolate Flavor</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">A taste kids actually ask for.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Zero Artificial Preservatives</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Keeping it natural and safe.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Gluten-Free Formula</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Safe for sensitive tummies.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Easy to Digest</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Gentle on the stomach for daily use.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="md:w-1/2 bg-orange-50 dark:bg-gray-800 rounded-3xl p-8 flex justify-center">
+        <img alt="Kidova Pro Details" class="w-full max-w-sm drop-shadow-xl"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCoN8pngdwudefWg2qEP0jWy6ctNaniuPbbfmyV-BlZiLb7nwjMvrrQdDGIPv9Wf4DeeTrqP7JcUjDk4pVBXiQ3TGLH0c9kQtDUJG_1sJGYc-n1t6SntHU8EYXTo2bfYKvrmMfGPQLLRnJYODJHAw2Ena6d5ZhwmY6LOAlrNEapvP4YXV8Ob2rZuZtx0VkAZpk6q7EqlCNL6V8fVOzoHkE7DBEj6OLTcmKJmQBLUmFs2ejlJIS0MSTiD2n49WiDGH2p0GzlF8fA5LK" />
+      </div>
+    </section>
+
+
+    
+    <section class="py-24 bg-gradient-to-b from-white to-orange-50 relative overflow-hidden" id="how-to-use">
+
+      <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span
+            class="inline-flex px-5 py-2 rounded-full bg-orange-100 text-orange-600 font-semibold tracking-wider uppercase text-sm">
+            How It Works
+          </span>
+
+          <h2 class="mt-6 text-5xl md:text-6xl font-black text-gray-900">
+            As Easy As
+            <span class="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
+              1 • 2 • 3
+            </span>
+          </h2>
+
+          <p class="mt-6 text-lg text-gray-600">
+            Prepare a delicious and nutritious Kidova Pro shake in less than a minute.
+          </p>
+        </div>
+
+        <div class="relative">
+
+          <!-- Desktop Line -->
+          <div
+            class="hidden lg:block absolute top-16 left-1/2 -translate-x-1/2 w-[70%] h-1 bg-gradient-to-r from-orange-300 via-orange-500 to-yellow-400 rounded-full">
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 relative z-10">
+
+            <!-- Step 1 -->
+            <div
+              class="group bg-white rounded-3xl p-10 text-center border border-orange-100 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
+
+              <div
+                class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white text-3xl font-black shadow-xl mb-8">
+                1
+              </div>
+
+              <div class="text-5xl mb-6">🥄</div>
+
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Scoop
+              </h3>
+
+              <p class="text-gray-600 leading-8">
+                Add one level scoop of Kidova Pro powder into your shaker or glass.
+              </p>
+
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="group bg-white rounded-3xl p-10 text-center border border-orange-100 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
+
+              <div
+                class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white text-3xl font-black shadow-xl mb-8">
+                2
+              </div>
+
+              <div class="text-5xl mb-6">🥛</div>
+
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Mix
+              </h3>
+
+              <p class="text-gray-600 leading-8">
+                Pour 200ml milk or water and stir until completely blended.
+              </p>
+
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="group bg-white rounded-3xl p-10 text-center border border-orange-100 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
+
+              <div
+                class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white text-3xl font-black shadow-xl mb-8">
+                3
+              </div>
+
+              <div class="text-5xl mb-6">🚀</div>
+
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Enjoy
+              </h3>
+
+              <p class="text-gray-600 leading-8">
+                Enjoy a tasty protein-rich drink that fuels growth and performance.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+ <section class="py-28 px-6 bg-gradient-to-b from-white to-orange-50">
+
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <span
+        class="inline-flex px-5 py-2 rounded-full bg-orange-100 text-orange-600 text-sm font-bold tracking-widest uppercase">
+        Customer Love
+      </span>
+
+      <h2 class="mt-6 text-5xl md:text-6xl font-black text-gray-900">
+        Trusted By
+        <span
+          class="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
+          Thousands Of Parents
+        </span>
+      </h2>
+    </div>
+
+    <!-- Testimonial Card -->
+    <div
+      class="relative overflow-hidden rounded-[40px] bg-white border border-orange-100 shadow-[0_20px_80px_rgba(0,0,0,0.08)] p-10 md:p-16">
+
+      <!-- Glow -->
+      <div
+        class="absolute -top-20 -right-20 w-72 h-72 bg-orange-300/20 blur-[120px] rounded-full">
+      </div>
+
+      <!-- Quote -->
+      <div
+        class="absolute top-10 left-10 text-[120px] leading-none font-black text-orange-100">
+        "
+      </div>
+
+      <div class="relative z-10">
+
+        <!-- Rating -->
+        <div class="flex justify-center gap-1 text-yellow-400 mb-8">
+          <span class="material-icons text-3xl">star</span>
+          <span class="material-icons text-3xl">star</span>
+          <span class="material-icons text-3xl">star</span>
+          <span class="material-icons text-3xl">star</span>
+          <span class="material-icons text-3xl">star</span>
+        </div>
+
+        <!-- Review -->
+        <p
+          class="text-2xl md:text-4xl font-bold text-center text-gray-900 leading-relaxed max-w-4xl mx-auto">
+          My son absolutely loves the taste. Getting him enough protein used to
+          be difficult, but Kidova Pro made it effortless.
+        </p>
+
+        <!-- User -->
+        <div class="mt-12 flex justify-center items-center gap-5">
+
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+            class="w-16 h-16 rounded-full object-cover ring-4 ring-orange-100"
+            alt="Parent" />
+
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-lg text-gray-900">
+                Sarah Mitchell
+              </h4>
+
+              <span
+                class="px-2 py-1 rounded-full bg-green-100 text-green-600 text-xs font-semibold">
+                Verified Buyer
+              </span>
+            </div>
+
+            <p class="text-gray-500">
+              Mother of a 7-year-old
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="grid grid-cols-3 gap-8 mt-16 pt-10 border-t border-orange-100">
+
+          <div class="text-center">
+            <h3 class="text-4xl font-black text-orange-500">
+              4.9★
+            </h3>
+            <p class="text-gray-500">
+              Average Rating
+            </p>
+          </div>
+
+          <div class="text-center">
+            <h3 class="text-4xl font-black text-orange-500">
+              10K+
+            </h3>
+            <p class="text-gray-500">
+              Happy Parents
+            </p>
+          </div>
+
+          <div class="text-center">
+            <h3 class="text-4xl font-black text-orange-500">
+              95%
+            </h3>
+            <p class="text-gray-500">
+              Repeat Orders
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <section class="relative py-32 overflow-hidden">
+
+      <!-- Background Glow -->
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-orange-400/20 blur-[180px] rounded-full">
+        </div>
+      </div>
+
+      <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 relative z-10">
+
+        <div
+          class="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 p-[1px] shadow-[0_30px_100px_rgba(249,115,22,0.35)]">
+
+          <div class="rounded-[40px] bg-white px-8 py-20 md:px-20 text-center">
+
+            <span
+              class="inline-flex px-5 py-2 rounded-full bg-orange-100 text-orange-600 text-sm font-bold tracking-widest uppercase">
+              Limited Time Offer
+            </span>
+
+            <h2 class="mt-8 text-5xl md:text-7xl font-black leading-tight text-gray-900">
+              Ready To Fuel
+              <span class="block bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">
+                Their Potential?
+              </span>
+            </h2>
+
+            <p class="mt-8 text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Give your child the nutrition they need to grow stronger,
+              smarter and healthier every single day.
+            </p>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap justify-center gap-10 mt-12 mb-12">
+
+              <div>
+                <h3 class="text-4xl font-black text-orange-500">10K+</h3>
+                <p class="text-gray-500">Happy Parents</p>
+              </div>
+
+              <div>
+                <h3 class="text-4xl font-black text-orange-500">4.9★</h3>
+                <p class="text-gray-500">Average Rating</p>
+              </div>
+
+              <div>
+                <h3 class="text-4xl font-black text-orange-500">100%</h3>
+                <p class="text-gray-500">Premium Quality</p>
+              </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+
+              <a href="#"
+                class="group inline-flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg shadow-xl hover:scale-105 transition-all duration-300">
+
+                Get Kidova Pro
+
+                <span class="ml-3 group-hover:translate-x-2 transition">
+                  →
+                </span>
+
+              </a>
+
+              <a href="#"
+                class="inline-flex items-center justify-center px-10 py-5 rounded-full border-2 border-gray-200 text-gray-800 font-bold text-lg hover:border-orange-400 hover:text-orange-500 transition-all duration-300">
+
+                Learn More
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+      <div class="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b border-gray-800 pb-8">
+          <div class="col-span-1 md:col-span-2">
+            <a class="text-2xl font-display font-extrabold text-white tracking-tighter mb-4 inline-block"
+              href="#">Kidova Pro</a>
+            <p class="text-gray-400 max-w-sm">Smart nutrition designed for growing champions. Fueling healthy
+              development with delicious taste.</p>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a class="hover:text-primary transition-colors" href="#">Shop</a></li>
+              <li><a class="hover:text-primary transition-colors" href="#benefits">Benefits</a></li>
+              <li><a class="hover:text-primary transition-colors" href="#faq">FAQ</a></li>
+              <li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                href="#">
+                <span class="material-icons text-sm">facebook</span>
+              </a>
+              <a class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+                href="#">
+                <span class="material-icons text-sm">camera_alt</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          <p>© 2024 Kidova Pro Nutrition. All rights reserved.</p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+            <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

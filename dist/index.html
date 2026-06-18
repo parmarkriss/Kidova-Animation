@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kidova Pro - Smart Nutrition for Growing Champions</title>
+  <meta name="description" content="Explore Kidova Pro Nutrition Powder Belgian Chocolate flavor. High-protein, nutrient-rich formula designed to power growing children.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+
+  <!-- Tailwind CSS & Fonts from code.html -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f97316", // energetic orange
+            "background-light": "#ffffff",
+            "background-dark": "#1f2937",
+            secondary: "#4b5563",
+            accent: "#8b5cf6",
+          },
+          fontFamily: {
+            display: ["Nunito", "sans-serif"],
+            body: ["Poppins", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            'lg': "1rem",
+            'xl': "1.5rem",
+          },
+        },
+      },
+    };
+  </script>
+  <script type="module" crossorigin src="/assets/index-W1kqE_Rh.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DHPJSAF4.css">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader-overlay">
+    <div class="preloader-content">
+      <div class="loader-visual">
+        <div class="liquid-cup">
+          <div class="chocolate-fill"></div>
+        </div>
+      </div>
+      <h1 class="loader-title">Kidova Pro</h1>
+      <p class="loader-subtitle">Preparing Belgian Chocolate Mix...</p>
+      <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="load-progress"></div>
+      </div>
+      <div class="progress-text" id="load-percentage">0%</div>
+    </div>
+  </div>
+
+
+  <!-- Side Navigation Indicator -->
+  <div class="scroll-indicator-dots">
+    <div class="dot active" data-target="hero"></div>
+    <div class="dot" data-target="flavor"></div>
+    <div class="dot" data-target="nutrition"></div>
+  </div>
+
+  <!-- Canvas Container (Fixed in Background) -->
+  <div class="canvas-container">
+    <canvas id="animation-canvas"></canvas>
+  </div>
+
+  <!-- Main Scroll Container -->
+  <main class="scroll-container">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="scroll-section hero-section">
+      <div class="section-content-wrapper">
+        <div class="hero-card glass-card">
+          <span class="badge">New Release</span>
+          <h1 class="main-title">Smart Nutrition for <span class="text-gradient">Growing Champions</span></h1>
+          <p class="section-description">
+            Fuel your child's daily learning, play, and growth with Kidova Pro. A premium nutritional formula loaded with essential vitamins, minerals, and rich Belgian chocolate.
+          </p>
+          <div class="hero-actions">
+            <a href="#nutrition" class="btn-primary">Get Kidova Pro</a>
+            <a href="#flavor" class="btn-secondary">Learn More</a>
+          </div>
+          <div class="scroll-prompt">
+            <span class="mouse-icon"><span class="mouse-wheel"></span></span>
+            <span>Scroll to dive in</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Taste / Splash Section -->
+    <section id="flavor" class="scroll-section flavor-section">
+      <div class="section-content-wrapper align-right">
+        <div class="flavor-card glass-card">
+          <span class="badge badge-accent">Delicious Flavor</span>
+          <h2 class="section-title">Rich Belgian Chocolate Taste</h2>
+          <p class="section-description">
+            No more fuss at milk time. Kidova Pro blends instantly into a creamy, chocolatey treat that kids look forward to every single day.
+          </p>
+          <div class="flavor-features">
+            <div class="feature-tag">
+              <span class="tag-icon">🍫</span>
+              <span>100% Real Cocoa Flavor</span>
+            </div>
+            <div class="feature-tag">
+              <span class="tag-icon">🌱</span>
+              <span>Naturally Sweetened</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nutrition / Deep Splash Section -->
+    <section id="nutrition" class="scroll-section nutrition-section">
+      <div class="section-content-wrapper align-left">
+        <div class="nutrition-card glass-card">
+          <span class="badge badge-success">Science-Backed Formula</span>
+          <h2 class="section-title">Powering Healthy Growth</h2>
+          <p class="section-description">
+            Crafted by pediatric nutritionists to provide a robust foundation for active kids and toddlers.
+          </p>
+          <div class="nutrition-grid">
+            <div class="nutrition-item">
+              <div class="num-highlight">5g</div>
+              <div class="num-label">Protein Per Scoop</div>
+            </div>
+            <div class="nutrition-item">
+              <div class="num-highlight">24+</div>
+              <div class="num-label">Vitamins & Minerals</div>
+            </div>
+            <div class="nutrition-item">
+              <div class="num-highlight">0g</div>
+              <div class="num-label">Added Refined Sugar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <!-- Tailwind-styled sections from code.html -->
+  <div class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 antialiased relative z-20">
+    <section class="bg-gray-50 dark:bg-gray-800/50 py-20" id="benefits">
+      <div class="container mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">Everything Your Champion Needs</h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">Specially formulated to provide comprehensive nutritional support for active and growing children.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow text-center">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3">
+              <span class="material-icons text-3xl">fitness_center</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">5g Protein Per Scoop</h3>
+            <p class="text-gray-600 dark:text-gray-400">High-quality protein essential for strong muscle growth, repair, and overall healthy development.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow text-center">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-2xl flex items-center justify-center mx-auto mb-6 transform -rotate-3">
+              <span class="material-icons text-3xl">health_and_safety</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Immunity Boost</h3>
+            <p class="text-gray-600 dark:text-gray-400">Fortified with essential vitamins and minerals to keep their immune system strong all year round.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow text-center">
+            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3">
+              <span class="material-icons text-3xl">psychology</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Smart Nutrition</h3>
+            <p class="text-gray-600 dark:text-gray-400">A balanced formula specifically designed for the unique dietary needs of growing children.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container mx-auto px-6 py-20 flex flex-col md:flex-row-reverse items-center gap-16">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-6">Delicious Taste, Clean Ingredients</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          We believe nutrition shouldn't be a compromise. Kidova Pro combines the irresistible taste of Belgian chocolate with ingredients you can feel good about.
+        </p>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Rich Belgian Chocolate Flavor</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">A taste kids actually ask for.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Zero Artificial Preservatives</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Keeping it natural and safe.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Gluten-Free Formula</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Safe for sensitive tummies.</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="material-icons text-primary mr-3 mt-1">check_circle</span>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">Easy to Digest</h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">Gentle on the stomach for daily use.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="md:w-1/2 bg-orange-50 dark:bg-gray-800 rounded-3xl p-8 flex justify-center">
+        <img alt="Kidova Pro Details" class="w-full max-w-sm drop-shadow-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCoN8pngdwudefWg2qEP0jWy6ctNaniuPbbfmyV-BlZiLb7nwjMvrrQdDGIPv9Wf4DeeTrqP7JcUjDk4pVBXiQ3TGLH0c9kQtDUJG_1sJGYc-n1t6SntHU8EYXTo2bfYKvrmMfGPQLLRnJYODJHAw2Ena6d5ZhwmY6LOAlrNEapvP4YXV8Ob2rZuZtx0VkAZpk6q7EqlCNL6V8fVOzoHkE7DBEj6OLTcmKJmQBLUmFs2ejlJIS0MSTiD2n49WiDGH2p0GzlF8fA5LK"/>
+      </div>
+    </section>
+    <section class="bg-gray-50 dark:bg-gray-800/50 py-20" id="how-to-use">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">As Easy as 1-2-3</h2>
+          <p class="text-gray-600 dark:text-gray-400 text-lg">Prepare a nutritious shake in seconds.</p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-12 max-w-4xl mx-auto">
+          <div class="flex flex-col items-center text-center max-w-xs relative">
+            <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center mb-6 text-3xl font-display font-bold text-primary z-10 border-4 border-gray-50 dark:border-gray-800">1</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Scoop</h3>
+            <p class="text-gray-600 dark:text-gray-400">Add one level scoop of Kidova Pro powder to a glass or shaker.</p>
+          </div>
+          <div class="hidden md:block w-24 border-t-2 border-dashed border-gray-300 dark:border-gray-600 -mt-16"></div>
+          <div class="flex flex-col items-center text-center max-w-xs relative">
+            <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center mb-6 text-3xl font-display font-bold text-primary z-10 border-4 border-gray-50 dark:border-gray-800">2</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Mix</h3>
+            <p class="text-gray-600 dark:text-gray-400">Pour 200ml of cold milk or water over the powder.</p>
+          </div>
+          <div class="hidden md:block w-24 border-t-2 border-dashed border-gray-300 dark:border-gray-600 -mt-16"></div>
+          <div class="flex flex-col items-center text-center max-w-xs relative">
+            <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-full shadow-md flex items-center justify-center mb-6 text-3xl font-display font-bold text-primary z-10 border-4 border-gray-50 dark:border-gray-800">3</div>
+            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">Enjoy</h3>
+            <p class="text-gray-600 dark:text-gray-400">Stir well until smooth and watch them fuel their inner champion!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container mx-auto px-6 py-24">
+      <div class="bg-primary/5 dark:bg-primary/10 rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto relative">
+        <span class="material-icons text-6xl text-primary/20 absolute top-8 left-8">format_quote</span>
+        <div class="relative z-10">
+          <div class="flex justify-center mb-6 text-yellow-400">
+            <span class="material-icons">star</span>
+            <span class="material-icons">star</span>
+            <span class="material-icons">star</span>
+            <span class="material-icons">star</span>
+            <span class="material-icons">star</span>
+          </div>
+          <p class="text-2xl md:text-3xl font-display font-medium text-gray-900 dark:text-white leading-snug mb-8">
+            "My son loves the taste! It's finally easy to get him the protein he needs without a fight. Highly recommend for picky eaters."
+          </p>
+          <div class="flex items-center justify-center gap-4">
+            <img alt="Sarah M." class="w-14 h-14 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8RSXX9H6NfMoPueg6qoVWmgsjs14Pkfk1YNy_vVQxbivy9SqPYbaq4G32Zy6Stwh4JgX7LI2fOPBqG4wSA3WJFzaTHiTL7ayIaQdWjle71JsfSuCvHoLzE5f-EoOst0TNoamtP73tTE6rPPuoSzYYR0fpDBVcMB0BEdq0eXQLWkaL4mT1EuN3o_q7o0iQNZEFdh_RzFiYy5E5Z8X5xyUfhFM0rrvWTQMXT2DoJ7mLinNpiBE_Ci1q5CQ03r4dq-VLZDrHWwIFb9NE"/>
+            <div class="text-left">
+              <p class="font-bold text-gray-900 dark:text-white">Sarah M.</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Mother of a 7-year-old</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-primary py-20 text-center px-6">
+      <div class="container mx-auto max-w-3xl">
+        <h2 class="text-4xl font-display font-bold text-white mb-6">Ready to Fuel Their Potential?</h2>
+        <p class="text-orange-100 text-xl mb-10">Join thousands of parents providing smart nutrition for their growing champions.</p>
+        <a class="inline-block bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl" href="#">Get Kidova Pro Today</a>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-gray-300 py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b border-gray-800 pb-8">
+          <div class="col-span-1 md:col-span-2">
+            <a class="text-2xl font-display font-extrabold text-white tracking-tighter mb-4 inline-block" href="#">Kidova Pro</a>
+            <p class="text-gray-400 max-w-sm">Smart nutrition designed for growing champions. Fueling healthy development with delicious taste.</p>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a class="hover:text-primary transition-colors" href="#">Shop</a></li>
+              <li><a class="hover:text-primary transition-colors" href="#benefits">Benefits</a></li>
+              <li><a class="hover:text-primary transition-colors" href="#faq">FAQ</a></li>
+              <li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+                <span class="material-icons text-sm">facebook</span>
+              </a>
+              <a class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors" href="#">
+                <span class="material-icons text-sm">camera_alt</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+          <p>© 2024 Kidova Pro Nutrition. All rights reserved.</p>
+          <div class="flex space-x-4 mt-4 md:mt-0">
+            <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+            <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
